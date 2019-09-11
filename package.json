@@ -1,6 +1,6 @@
 {
   "name": "hasura-auth",
-  "version": "0.0.16",
+  "version": "0.0.1",
   "description": "Simple auth for HASURA",
   "main": "./build/index.js",
   "scripts": {
@@ -16,14 +16,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rodolfosilva/hasura-auth.git"
+    "url": "git+https://github.com/18601673727/hasura-auth.git"
   },
   "author": "Rodolfo Silva",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rodolfosilva/hasura-auth/issues"
+    "url": "https://github.com/18601673727/hasura-auth/issues"
   },
-  "homepage": "https://github.com/rodolfosilva/hasura-auth#readme",
+  "homepage": "https://github.com/18601673727/hasura-auth#readme",
   "dependencies": {
     "apollo-server-express": "^2.7.0",
     "bcryptjs": "^2.4.3",

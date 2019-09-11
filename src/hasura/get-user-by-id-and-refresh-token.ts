@@ -12,7 +12,7 @@ export const getUserByIdAndRefreshToken = async (
     gql`
       ${USER_FRAGMENT}
       query($where: user_session_bool_exp) {
-        user_session(where: $where) {
+        user_sessions(where: $where) {
           user {
             ...UserParts
           }
@@ -29,7 +29,7 @@ export const getUserByIdAndRefreshToken = async (
     },
   );
 
-  const user: User = getIn(result, 'data.user_session[0].user');
+  const user: User = getIn(result, 'data.user_sessions[0].user');
 
   if (user === null || user === undefined) {
     throw new Error("Invalid 'refresh_token' or 'user_id'");

@@ -11,7 +11,7 @@ Create tables and initial state for your user management.
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;
-CREATE TABLE "user" (
+CREATE TABLE "users" (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   email citext NOT NULL UNIQUE,
   password text NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE "user" (
   updated_at timestamp with time zone NOT NULL DEFAULT now()
 );
 
-CREATE TABLE "user_session" (
+CREATE TABLE "user_sessions" (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   user_agent text NULL,
   ip_address text NULL,

@@ -1,4 +1,4 @@
 - args:
     cascade: true
-    sql: DROP TABLE IF EXISTS "public"."user", "public"."user_session" CASCADE;
+    sql: DROP TABLE IF EXISTS "public"."users", "public"."user_sessions" CASCADE;
   type: run_sql
