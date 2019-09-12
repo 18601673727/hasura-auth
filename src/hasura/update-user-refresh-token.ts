@@ -15,13 +15,13 @@ export const updateUserRefreshToken = async (
   const result = await hasuraQuery(
     gql`
       mutation(
-        $where: user_session_bool_exp!
-        $set: user_session_insert_input!
+        $where: user_sessions_bool_exp!
+        $set: user_sessions_insert_input!
       ) {
-        delete_user_session(where: $where) {
+        delete_user_sessions(where: $where) {
           affected_rows
         }
-        insert_user_session(objects: [$set]) {
+        insert_user_sessions(objects: [$set]) {
           affected_rows
         }
       }
@@ -47,8 +47,8 @@ export const updateUserRefreshToken = async (
   );
 
   if (
-    getIn(result, 'data.delete_user_session.affected_rows', 0) === 0 ||
-    getIn(result, 'data.insert_user_session.affected_rows', 0) === 0
+    getIn(result, 'data.delete_user_sessions.affected_rows', 0) === 0 ||
+    getIn(result, 'data.insert_user_sessions.affected_rows', 0) === 0
   ) {
     return Promise.reject(new Error('Error to update the refresh token'));
   }

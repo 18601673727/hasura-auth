@@ -12,7 +12,7 @@ export const getUserByEmail = async (
       gql`
         ${USER_FRAGMENT}
         query($where: user_bool_exp) {
-          user(where: $where) {
+          users(where: $where) {
             ...UserParts
           }
         }

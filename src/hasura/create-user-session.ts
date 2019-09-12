@@ -16,8 +16,8 @@ export const createUserSession = async (
 
     const result = await hasuraQuery(
       gql`
-        mutation($userSessionData: [user_session_insert_input!]!) {
-          insert_user_session(objects: $userSessionData) {
+        mutation($userSessionData: [user_sessions_insert_input!]!) {
+          insert_user_sessions(objects: $userSessionData) {
             returning {
               id
             }
@@ -35,7 +35,7 @@ export const createUserSession = async (
       },
     );
 
-    const sessionId = getIn(result, 'data.insert_user_session.returning[0].id');
+    const sessionId = getIn(result, 'data.insert_user_sessions.returning[0].id');
 
     if (sessionId === undefined) {
       return Promise.reject(new Error('Error to create the user session'));

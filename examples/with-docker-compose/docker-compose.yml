@@ -24,7 +24,7 @@ services:
     volumes:
       - ./migrations:/hasura-migrations
   hasura-auth:
-    image: rodolfosilva/hasura-auth:0.0.20
+    image: 18601673727/hasura-auth:0.0.2
     restart: always
     environment:
       HASURA_GRAPHQL_ENDPOINT: http://graphql-engine:8080/v1/graphql

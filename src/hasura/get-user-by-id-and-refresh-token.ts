@@ -11,7 +11,7 @@ export const getUserByIdAndRefreshToken = async (
   const result = await hasuraQuery(
     gql`
       ${USER_FRAGMENT}
-      query($where: user_session_bool_exp) {
+      query($where: user_sessions_bool_exp) {
         user_sessions(where: $where) {
           user {
             ...UserParts

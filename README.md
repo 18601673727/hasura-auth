@@ -31,7 +31,7 @@ CREATE TABLE "user_sessions" (
   expires_at timestamp with time zone NOT NULL,
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   updated_at timestamp with time zone NOT NULL DEFAULT now(),
-  FOREIGN KEY (user_id) REFERENCES "user" (id)
+  FOREIGN KEY (user_id) REFERENCES "users" (id)
 );
 ```
 

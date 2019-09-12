@@ -1,5 +1,5 @@
 - args:
-    relationship: user
+    relationship: users
     table:
       name: user_sessions
       schema: public
